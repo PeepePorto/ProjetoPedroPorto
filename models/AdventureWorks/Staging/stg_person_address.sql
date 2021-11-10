@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 with 
     source as (
         select
@@ -15,7 +13,7 @@ with
             , spatiallocation
             --, rowguid (não necessária)
             --, modifieddate (não necessária)
-        from {{  source('erpprojeto20211106','person_adresss')  }}
+        from {{  source('erpprojeto20211106','person_address')  }}
     )
 
     select * from source
