@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 with 
     source as (
         select
@@ -11,7 +9,7 @@ with
             , orderdate
             , duedate
             , shipdate
-            , status
+            , status 
             , purchaseordernumber
             , accountnumber
             , customerid

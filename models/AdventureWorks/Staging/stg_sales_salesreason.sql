@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 with 
     source as (
         select
@@ -9,7 +7,7 @@ with
             , name	
             , reasontype	
             --, modifieddate (não necessária)
-        from {{  source('erpprojeto20211106','sales_sales_salesreason')  }}
+        from {{  source('erpprojeto20211106','sales_salesreason')  }}
     )
 
     select * from source
