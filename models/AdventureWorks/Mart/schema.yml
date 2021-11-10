@@ -1,0 +1,71 @@
+version: 2
+
+models:
+    - name: dim_person_address
+      columns:
+          - name: addressid
+            description: "PK"
+            tests:
+              - unique
+              - not_null
+    - name: dim_person_countryregion
+      columns:
+          - name: countryregioncode
+            description: "PK"
+            tests:
+              - unique
+              - not_null
+    - name: dim_person_stateprovince
+      columns:
+          - name: stateprovinceid
+            description: "PK"
+            tests:
+              - unique
+              - not_null
+    - name: dim_production_product
+      columns:
+          - name: productid
+            description: "PK"
+            tests:
+              - unique
+              - not_null
+    - name: dim_sales_creditcard
+      columns:
+          - name: creditcardid
+            description: "PK"
+            tests:
+              - unique
+              - not_null
+    - name: dim_sales_customer
+      columns:
+          - name: customerid
+            description: "PK"
+            tests:
+              - unique
+              - not_null
+    - name: fact_sales_salesorderheadersalesreason
+      columns:
+          - name: salesorderid
+            description: "PK"
+            tests:
+              - not_null /* Pode ter duplicadas */
+    - name: dim_sales_salesreason
+      columns:
+          - name: salesreasonid
+            description: "PK"
+            tests:
+              - unique
+              - not_null
+    - name: fact_sales_salesorderdetail
+      columns:
+          - name: salesorderid
+            description: "PK"
+            tests:
+              - not_null /* Pode ter duplicadas */
+    - name: fact_sales_salesorderheader
+      columns:
+          - name: salesorderid
+            description: "PK"
+            tests:
+              - unique
+              - not_null
