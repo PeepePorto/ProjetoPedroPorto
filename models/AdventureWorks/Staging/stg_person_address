@@ -3,7 +3,7 @@
 with 
     source as (
         select
-            /* Primary Key */
+            /* Primary Key 1 */
             addressid
             /* Foreign Key */
             , stateprovinceid
