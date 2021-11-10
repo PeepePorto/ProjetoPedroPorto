@@ -1,0 +1,84 @@
+
+version: 2
+
+sources: 
+    - name: erpprojeto20211106 
+      tables:
+        - name: person_address
+          description: endereços (tabela dimensão)
+          columns: 
+            - name: addressid
+              description: id do endereço
+              tests:
+                - unique
+                - not_null
+        - name: person_countryregion 
+          description: regiões (tabela dimensão)
+          columns:
+            - name: countryregioncode 
+              description: código da região
+              tests:
+                - unique
+                - not_null
+        - name: person_stateprovince
+          description: províncias (tabela dimensão)
+          columns:
+            - name: stateprovinceid
+              description: id da província/estado
+              tests:
+                - unique
+                - not_null
+        - name: production_product
+          description: produtos (tabela dimensão)
+          columns:
+            - name: productid
+              description: id do produto
+              tests:
+                - unique
+                - not_null
+        - name: sales_creditcard
+          description: cartões que realizaram compras (tabela dimensão)
+          columns:
+            - name: creditcardid
+              description: id do cartão
+              tests:
+                - unique
+                - not_null
+        - name: sales_customer
+          description: clientes (tabela dimensão)
+          columns:
+            - name: customerid
+              description: id do cliente
+              tests:
+                - unique
+                - not_null
+        - name: sales_salesorderdetail
+          description: detalhe dos pedidos (tabela fato)
+          columns:
+            - name: salesorderid
+              description: id do pedido
+              tests:
+                - not_null
+        - name: sales_salesorderheader
+          description: descrição dos pedidos (tabela fato)
+          columns:
+            - name: salesorderid
+              description: id do pedido
+              tests:
+                - unique
+                - not_null
+        - name: sales_salesorderheadersalesreason
+          description: junção das razões de compras dos clientes (fato)
+          columns:
+            - name: salesorderid
+              description: id do pedido
+              tests:
+                - not_null
+        - name: sales_salesreason
+          description: levantamento das razões de compra dos clientes (tabela dimensão)
+          columns:
+            - name: salesreasonid
+              description: id da razão de compra
+              tests:
+                - unique
+                - not_null    
