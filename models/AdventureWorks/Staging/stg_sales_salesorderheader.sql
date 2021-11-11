@@ -1,18 +1,14 @@
+
 with 
     source as (
         select
-            /* Primary Key */
+            /* Primary Key1 */
             salesorderid
             --, businessentityid (não existe)
             /* Foreign Key */
             , revisionnumber
-            , orderdate
-            , duedate
-            , shipdate
-            , status 
-            , purchaseordernumber
-            , accountnumber
             , customerid
+            , status
             , salespersonid
             , territoryid
             , billtoaddressid
@@ -23,6 +19,9 @@ with
             , taxamt
             , freight
             , totaldue
+            , orderdate
+            , duedate
+            , shipdate
             /* Unique Key */
             , purchaseordernumber
             , accountnumber
